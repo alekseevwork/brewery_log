@@ -1,0 +1,9 @@
+{% load brew_tags %}
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active">Tanks Full:</a>
+    {% get_tanks as tanks %}
+    {% for item in tanks %}
+    <a href="{% url 'tanks' item.pk %}" class="list-group-item list-group-item-action active">
+        # {{ item.number }} - {{item.title}}</a>
+    {% endfor %}
+</div>
